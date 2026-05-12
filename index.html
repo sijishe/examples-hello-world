@@ -1,80 +1,851 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello, Deno</title>
-  <link rel="preload" href="https://demo-styles.deno.deno.net/fonts/Moranga-Regular.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="https://demo-styles.deno.deno.net/fonts/Moranga-Medium.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="https://demo-styles.deno.deno.net/fonts/Recursive_Variable.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="https://demo-styles.deno.deno.net/styles.css">
-  <style>
-    img {
-      display: inline-block;
-      vertical-align: middle;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>司机社 - 官方地址发布页 | 最新访问入口</title>
+  <meta name="description" content="司机社官方地址发布页，提供最新稳定访问入口。收藏本页随时获取司机社最新地址，多通道备用，安全稳定，24小时在线。" />
+  <meta name="keywords" content="司机社,司机社地址,司机社最新地址,司机社入口,司机社官网,司机社访问" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="司机社" />
+  <meta property="og:title" content="司机社 - 官方地址发布页" />
+  <meta property="og:description" content="司机社官方地址发布页，提供最新稳定访问入口，多通道备用，安全稳定。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="司机社 - 官方地址发布页" />
+  <meta name="twitter:description" content="司机社官方地址发布页，提供最新稳定访问入口，多通道备用，安全稳定。" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#e02020',
+              'red-dark': '#b01010',
+              'red-glow': '#ff3333',
+              blue: '#1a6ef5',
+              'blue-dark': '#0d4ec2',
+              'blue-light': '#3d8bff',
+              dark: '#0a0a0a',
+              'dark-2': '#111111',
+              'dark-3': '#1a1a1a',
+              'dark-4': '#222222',
+              gray: '#888888',
+              'gray-light': '#aaaaaa',
+            }
+          },
+          fontFamily: {
+            sans: ['"Noto Sans SC"', 'sans-serif'],
+            display: ['Oswald', '"Noto Sans SC"', 'sans-serif'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+            'shimmer': 'shimmer 2.5s linear infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            glow: {
+              '0%': { textShadow: '0 0 10px rgba(224,32,32,0.5), 0 0 20px rgba(224,32,32,0.3)' },
+              '100%': { textShadow: '0 0 20px rgba(224,32,32,0.9), 0 0 40px rgba(224,32,32,0.6), 0 0 60px rgba(224,32,32,0.3)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% center' },
+              '100%': { backgroundPosition: '200% center' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
     }
+  </script>
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #e02020; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #ff3333; }
+
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      background-color: #0a0a0a;
+      color: #ffffff;
+    }
+
+    /* Animated gradient text */
+    .gradient-text-red {
+      background: linear-gradient(135deg, #ff4444, #e02020, #ff6666, #e02020);
+      background-size: 300% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
+    }
+
+    /* Glassmorphism */
+    .glass {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-blue {
+      background: rgba(26, 110, 245, 0.12);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(26, 110, 245, 0.25);
+    }
+
+    /* Noise texture overlay */
+    .noise::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Glow button */
+    .btn-glow-red {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .btn-glow-red::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(135deg, #e02020, #ff4444, #e02020);
+      border-radius: inherit;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .btn-glow-red:hover::before { opacity: 1; }
+    .btn-glow-red:hover {
+      box-shadow: 0 0 30px rgba(224,32,32,0.6), 0 0 60px rgba(224,32,32,0.3);
+      transform: translateY(-2px);
+    }
+
+    .btn-glow-blue {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .btn-glow-blue:hover {
+      box-shadow: 0 0 30px rgba(26,110,245,0.6), 0 0 60px rgba(26,110,245,0.3);
+      transform: translateY(-2px);
+    }
+
+    /* Scan line animation */
+    @keyframes scanline {
+      0% { top: -10%; }
+      100% { top: 110%; }
+    }
+    .scanline {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(224,32,32,0.4), transparent);
+      animation: scanline 4s linear infinite;
+      pointer-events: none;
+    }
+
+    /* Particle dots */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* Red border glow */
+    .border-glow-red {
+      box-shadow: 0 0 0 1px rgba(224,32,32,0.3), 0 0 20px rgba(224,32,32,0.1);
+    }
+
+    /* Counter animation */
+    .counter { font-variant-numeric: tabular-nums; }
+
+    /* Section divider */
+    .divider-red {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #e02020, transparent);
+    }
+
+    /* Mobile menu transition */
+    [x-cloak] { display: none !important; }
   </style>
 </head>
+<body class="bg-brand-dark overflow-x-hidden" x-data="{ 
+  mobileMenu: false, 
+  scrolled: false,
+  init() {
+    window.addEventListener('scroll', () => {
+      this.scrolled = window.scrollY > 50;
+    });
+  }
+}">
 
-<body>
-    <main>
-      <section>
-        <a href="https://deno.com/deploy">
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav 
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+    :class="scrolled ? 'bg-brand-dark/95 backdrop-blur-xl border-b border-white/5 shadow-2xl' : 'bg-transparent'"
+  >
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-brand-red flex items-center justify-center shadow-lg shadow-red-900/50">
+          <span class="text-white font-display font-bold text-sm">司</span>
+        </div>
+        <div>
+          <span class="text-brand-red font-display font-bold text-lg tracking-wide">司机社</span>
+          <span class="text-white/60 text-xs ml-2 hidden sm:inline">地址发布页</span>
+        </div>
+      </div>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#home" class="text-white/60 hover:text-white text-sm transition-colors duration-200 hover:text-brand-red">首页</a>
+        <a href="http://kankan8.xyz/" class="text-white/60 hover:text-white text-sm transition-colors duration-200 hover:text-brand-red">访问入口</a>
+        <a href="#about" class="text-white/60 hover:text-white text-sm transition-colors duration-200 hover:text-brand-red">关于我们</a>
+        <a href="#faq" class="text-white/60 hover:text-white text-sm transition-colors duration-200 hover:text-brand-red">常见问题</a>
+      </div>
+
+      <!-- CTA -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="http://kankan8.xyz/" class="px-5 py-2 bg-brand-red hover:bg-brand-red-dark text-white text-sm font-medium rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-red-900/50 hover:-translate-y-0.5">
+          立即访问
         </a>
-      <h1>
-        <p>
-          Hello, Deno!
-        </p>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        @click="mobileMenu = !mobileMenu"
+        class="md:hidden text-white/80 hover:text-white p-2"
+      >
+        <svg x-show="!mobileMenu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg x-show="mobileMenu" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div 
+      x-show="mobileMenu" 
+      x-cloak
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 -translate-y-4"
+      x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-4"
+      class="md:hidden bg-brand-dark-2/98 backdrop-blur-xl border-b border-white/5"
+    >
+      <div class="px-6 py-4 flex flex-col gap-4">
+        <a href="#home" @click="mobileMenu=false" class="text-white/70 hover:text-brand-red py-2 text-sm transition-colors">首页</a>
+        <a href="http://kankan8.xyz/" @click="mobileMenu=false" class="text-white/70 hover:text-brand-red py-2 text-sm transition-colors">访问入口</a>
+        <a href="#about" @click="mobileMenu=false" class="text-white/70 hover:text-brand-red py-2 text-sm transition-colors">关于我们</a>
+        <a href="#faq" @click="mobileMenu=false" class="text-white/70 hover:text-brand-red py-2 text-sm transition-colors">常见问题</a>
+        <a href="#access" @click="mobileMenu=false" class="mt-2 px-5 py-2.5 bg-brand-red text-white text-sm font-medium rounded-lg text-center">立即访问</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0">
+      <img 
+        src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&h=1080&fit=crop&auto=format" 
+        alt="background" 
+        class="w-full h-full object-cover opacity-10"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark/80 to-brand-dark"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-transparent to-brand-dark"></div>
+    </div>
+
+    <!-- Scanline effect -->
+    <div class="scanline"></div>
+
+    <!-- Decorative particles -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="particle w-1 h-1 bg-brand-red/40 top-1/4 left-1/5" style="animation-delay: 0s;"></div>
+      <div class="particle w-1.5 h-1.5 bg-brand-red/30 top-1/3 right-1/4" style="animation-delay: 1s;"></div>
+      <div class="particle w-1 h-1 bg-brand-blue/40 top-2/3 left-1/3" style="animation-delay: 2s;"></div>
+      <div class="particle w-2 h-2 bg-brand-red/20 bottom-1/4 right-1/3" style="animation-delay: 3s;"></div>
+      <!-- Grid lines -->
+      <div class="absolute inset-0" style="background-image: linear-gradient(rgba(224,32,32,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(224,32,32,0.03) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 text-center px-6 max-w-5xl mx-auto pt-24">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-brand-red/20 mb-8" data-aos="fade-down" data-aos-duration="600">
+        <span class="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
+        <span class="text-brand-red text-xs font-medium tracking-widest uppercase">官方地址发布页</span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="font-display font-bold tracking-tight mb-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+        <span class="gradient-text-red text-6xl sm:text-7xl md:text-8xl lg:text-9xl block leading-none mb-2">司机社</span>
+        <span class="text-white text-3xl sm:text-4xl md:text-5xl font-light tracking-widest">地址发布页</span>
       </h1>
-      <p>
-        This little example is being served by <a href="https://deno.com/">Deno</a>.
-        You can run it locally or in porduction on <a href="https://deno.com/deploy">Deno Deploy</a> or other hosting platforms.
+
+      <!-- Subtitle -->
+      <p class="text-white/60 text-base sm:text-lg max-w-xl mx-auto mb-12 leading-relaxed" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+        请收藏此页面，随时获取最新访问地址。
+        <br />
+        <span class="text-white/40 text-sm">本页面仅用于最新地址变更通知，提供稳定访问通道。</span>
       </p>
-      <ul>
-        <li>Run it locally with<code>deno task dev</code></li>
-        <li>Deploy it to <a href="https://deno.com/deploy">Deno Deploy</a> via the CLI by running<code>deno deploy</code></li>
-        <li>Run it locally and share it publically by running <code>deno deploy --connected</code></li>
-      </ul>
-    </section>
-      <hr>
-    <section>
-      <h2>What's next?</h2>
-      <p>
-        You can clone this example and deploy it to Deno Deploy in just a few clicks
-        <a href="https://app.deno.com/new?clone=https://github.com/denoland/examples&path=hello-world"><img src="https://deno.com/button" alt="Deploy on Deno"/></a>
+
+      <!-- Access Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+        <a 
+          href="http://kankan8.xyz/" 
+          class="btn-glow-blue group flex flex-col items-center px-10 py-4 bg-brand-blue rounded-xl font-medium text-white min-w-[200px] border border-brand-blue/30"
+        >
+          <span class="text-xs text-blue-200/80 mb-1">地址一</span>
+          <span class="text-base font-semibold group-hover:scale-105 transition-transform">点我访问 - 司机社</span>
+        </a>
+        <a 
+          href="http://kankan8.xyz/" 
+          class="btn-glow-blue group flex flex-col items-center px-10 py-4 bg-brand-blue rounded-xl font-medium text-white min-w-[200px] border border-brand-blue/30"
+        >
+          <span class="text-xs text-blue-200/80 mb-1">地址二</span>
+          <span class="text-base font-semibold group-hover:scale-105 transition-transform">点我访问 备用地址 - 司机社</span>
+        </a>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="flex flex-col items-center gap-2 animate-bounce" data-aos="fade-up" data-aos-delay="500">
+        <span class="text-white/30 text-xs">向下探索</span>
+        <svg class="w-5 h-5 text-brand-red/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATS BAR ==================== -->
+  <section class="relative py-8 bg-brand-dark-2 border-y border-white/5">
+    <div class="divider-red absolute top-0 left-0 right-0"></div>
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div data-aos="fade-up" data-aos-delay="0">
+          <div class="text-3xl font-display font-bold text-brand-red counter" x-data="{ count: 0 }" x-intersect="() => { let end = 2018; let duration = 1500; let step = duration / end; let timer = setInterval(() => { count += 10; if(count >= 2018) { count = 2018; clearInterval(timer); } }, step * 10); }">
+            <span x-text="count.toLocaleString()">2018</span>
+          </div>
+          <div class="text-white/50 text-xs mt-1">创立年份</div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+          <div class="text-3xl font-display font-bold text-brand-red">7</div>
+          <div class="text-white/50 text-xs mt-1">年稳定运营</div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200">
+          <div class="text-3xl font-display font-bold text-brand-red">24/7</div>
+          <div class="text-white/50 text-xs mt-1">全天候可访问</div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="300">
+          <div class="text-3xl font-display font-bold text-brand-red">100%</div>
+          <div class="text-white/50 text-xs mt-1">安全稳定</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider-red absolute bottom-0 left-0 right-0"></div>
+  </section>
+
+  <!-- ==================== ACCESS SECTION ==================== -->
+  <section id="access" class="relative py-32 bg-brand-dark overflow-hidden">
+    <!-- BG decoration -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-brand-red/3 blur-3xl pointer-events-none"></div>
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 50% 50%, rgba(224,32,32,0.04) 0%, transparent 70%);"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <!-- Section Header -->
+      <div class="text-center mb-20" data-aos="fade-up">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/20 mb-6">
+          <span class="text-brand-red text-xs font-medium tracking-widest uppercase">访问入口</span>
+        </div>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-white mb-4">
+          选择您的访问方式
+        </h2>
+        <p class="text-white/50 text-base max-w-lg mx-auto">
+          多个访问通道确保您随时畅享司机社最新内容，建议收藏本页以获取持续更新
+        </p>
+      </div>
+
+      <!-- Access Cards -->
+      <div class="grid md:grid-cols-2 gap-6 mb-16">
+        <!-- Card 1 -->
+        <div 
+          class="glass border-glow-red rounded-2xl p-8 hover:bg-white/5 transition-all duration-300 hover:-translate-y-1 group"
+          data-aos="fade-right" data-aos-duration="700"
+        >
+          <div class="flex items-start justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-brand-blue/20 border border-brand-blue/30 flex items-center justify-center group-hover:bg-brand-blue/30 transition-colors">
+                <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-white/50 text-xs mb-1">主要通道</div>
+                <div class="text-white font-bold text-lg">地址一</div>
+              </div>
+            </div>
+            <span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-500/15 border border-green-500/25">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+              <span class="text-green-400 text-xs">在线</span>
+            </span>
+          </div>
+          <p class="text-white/40 text-sm mb-8 leading-relaxed">
+            主线路访问，速度快，稳定性高。推荐大多数用户使用此通道进行访问。
+          </p>
+          <a 
+            href="http://kankan8.xyz/" 
+            target="_blank"
+            rel="noopener"
+            class="flex items-center justify-center gap-3 w-full py-4 bg-brand-blue hover:bg-brand-blue-dark rounded-xl text-white font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-blue-900/40 hover:-translate-y-0.5 group/btn"
+          >
+            <span>点我访问 - 司机社</span>
+            <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div 
+          class="glass border-glow-red rounded-2xl p-8 hover:bg-white/5 transition-all duration-300 hover:-translate-y-1 group"
+          data-aos="fade-left" data-aos-duration="700"
+        >
+          <div class="flex items-start justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-brand-blue/20 border border-brand-blue/30 flex items-center justify-center group-hover:bg-brand-blue/30 transition-colors">
+                <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-white/50 text-xs mb-1">备用通道</div>
+                <div class="text-white font-bold text-lg">地址二</div>
+              </div>
+            </div>
+            <span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-500/15 border border-green-500/25">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+              <span class="text-green-400 text-xs">在线</span>
+            </span>
+          </div>
+          <p class="text-white/40 text-sm mb-8 leading-relaxed">
+            备用访问线路，当主线路无法访问时可切换至此通道，同等内容体验。
+          </p>
+          <a 
+            href="http://kankan8.xyz/" 
+            target="_blank"
+            rel="noopener"
+            class="flex items-center justify-center gap-3 w-full py-4 bg-brand-blue hover:bg-brand-blue-dark rounded-xl text-white font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-blue-900/40 hover:-translate-y-0.5 group/btn"
+          >
+            <span>点我访问 - 司机社</span>
+            <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Notice -->
+      <div class="glass rounded-xl p-6 border border-brand-red/15 flex gap-4 items-start" data-aos="fade-up">
+        <div class="w-10 h-10 rounded-lg bg-brand-red/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div>
+          <h4 class="text-white font-medium mb-1">重要提示</h4>
+          <p class="text-white/50 text-sm leading-relaxed">
+            本页面仅用于最新地址变更通知，提供稳定访问通道。建议将本页加入浏览器收藏夹，以便随时获取最新访问地址。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURES SECTION ==================== -->
+  <section id="about" class="relative py-32 bg-brand-dark-2 overflow-hidden">
+    <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 20% 50%, rgba(26,110,245,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(224,32,32,0.08) 0%, transparent 50%);"></div>
+    
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <!-- Section Header -->
+      <div class="text-center mb-20" data-aos="fade-up">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/20 mb-6">
+          <span class="text-brand-red text-xs font-medium tracking-widest uppercase">为什么选择我们</span>
+        </div>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-white mb-4">
+          稳定 · 安全 · 可靠
+        </h2>
+        <p class="text-white/50 text-base max-w-lg mx-auto">
+          司机社自2018年运营至今，始终为您提供最优质的访问体验
+        </p>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="glass rounded-2xl p-8 hover:bg-white/5 transition-all duration-300 hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="0">
+          <div class="w-14 h-14 rounded-2xl bg-brand-red/15 border border-brand-red/20 flex items-center justify-center mb-6 group-hover:bg-brand-red/25 transition-colors">
+            <svg class="w-7 h-7 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">安全可靠</h3>
+          <p class="text-white/40 text-sm leading-relaxed">多重安全保障，确保您的访问数据安全，无需担忧隐私泄露问题。</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="glass rounded-2xl p-8 hover:bg-white/5 transition-all duration-300 hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-14 h-14 rounded-2xl bg-brand-red/15 border border-brand-red/20 flex items-center justify-center mb-6 group-hover:bg-brand-red/25 transition-colors">
+            <svg class="w-7 h-7 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">极速访问</h3>
+          <p class="text-white/40 text-sm leading-relaxed">优化的CDN线路，确保全国各地用户都能获得流畅快速的访问体验。</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="glass rounded-2xl p-8 hover:bg-white/5 transition-all duration-300 hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-14 h-14 rounded-2xl bg-brand-red/15 border border-brand-red/20 flex items-center justify-center mb-6 group-hover:bg-brand-red/25 transition-colors">
+            <svg class="w-7 h-7 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">24小时在线</h3>
+          <p class="text-white/40 text-sm leading-relaxed">全天候稳定运行，无论何时想要访问，都能获得稳定的服务支持。</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="glass rounded-2xl p-8 hover:bg-white/5 transition-all duration-300 hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-14 h-14 rounded-2xl bg-brand-red/15 border border-brand-red/20 flex items-center justify-center mb-6 group-hover:bg-brand-red/25 transition-colors">
+            <svg class="w-7 h-7 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">定期更新</h3>
+          <p class="text-white/40 text-sm leading-relaxed">地址发布页定期维护更新，第一时间为您提供最新有效的访问地址。</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="glass rounded-2xl p-8 hover:bg-white/5 transition-all duration-300 hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="400">
+          <div class="w-14 h-14 rounded-2xl bg-brand-red/15 border border-brand-red/20 flex items-center justify-center mb-6 group-hover:bg-brand-red/25 transition-colors">
+            <svg class="w-7 h-7 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10M7 4H4a1 1 0 00-1 1v14a1 1 0 001 1h16a1 1 0 001-1V5a1 1 0 00-1-1h-3M7 4v3a1 1 0 001 1h8a1 1 0 001-1V4"/>
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">多通道备份</h3>
+          <p class="text-white/40 text-sm leading-relaxed">提供多个访问线路，一个线路出现故障可立即切换到备用线路继续访问。</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="glass rounded-2xl p-8 hover:bg-white/5 transition-all duration-300 hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="500">
+          <div class="w-14 h-14 rounded-2xl bg-brand-red/15 border border-brand-red/20 flex items-center justify-center mb-6 group-hover:bg-brand-red/25 transition-colors">
+            <svg class="w-7 h-7 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">用户优先</h3>
+          <p class="text-white/40 text-sm leading-relaxed">始终以用户体验为中心，持续优化服务质量，确保每位访客都满意而归。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA / SPLIT SECTION ==================== -->
+  <section class="relative py-32 bg-brand-dark overflow-hidden">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at center, rgba(224,32,32,0.06) 0%, transparent 70%);"></div>
+    
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Left Content -->
+        <div data-aos="fade-right" data-aos-duration="800">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/20 mb-6">
+            <span class="text-brand-red text-xs font-medium tracking-widest uppercase">关于司机社</span>
+          </div>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl text-white mb-6 leading-tight">
+            资源共享是<br />
+            <span class="gradient-text-red">互联网精神支柱</span>
+          </h2>
+          <p class="text-white/50 text-base leading-relaxed mb-6">
+            司机社自2018年创立以来，坚持为用户提供稳定的资源访问渠道。我们相信，资源共享是互联网的核心精神，是连接每个人的纽带。
+          </p>
+          <p class="text-white/40 text-sm leading-relaxed mb-10">
+            通过不断优化技术基础设施和访问通道，我们确保用户在任何时候都能顺畅地访问所需内容。本地址发布页作为我们持续更新的官方导航，为您提供最新、最稳定的访问入口。
+          </p>
+          <a 
+            href="#access"
+            class="inline-flex items-center gap-3 px-8 py-4 bg-brand-red hover:bg-brand-red-dark rounded-xl text-white font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-red-900/40 hover:-translate-y-0.5 group"
+          >
+            <span>立即访问</span>
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Right Image -->
+        <div class="relative" data-aos="fade-left" data-aos-duration="800">
+          <div class="relative rounded-2xl overflow-hidden border border-white/8 shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&auto=format" 
+              alt="Technology" 
+              class="w-full h-80 object-cover opacity-70"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <div class="glass rounded-xl p-4 border border-white/10">
+                <div class="flex items-center gap-3">
+                  <div class="w-3 h-3 rounded-full bg-green-400 animate-pulse"></div>
+                  <span class="text-white/80 text-sm">所有访问通道正常运行中</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Decorative element -->
+          <div class="absolute -top-4 -right-4 w-24 h-24 rounded-2xl border border-brand-red/20 rotate-12 opacity-50"></div>
+          <div class="absolute -bottom-4 -left-4 w-16 h-16 rounded-2xl border border-brand-blue/20 -rotate-6 opacity-50"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ SECTION ==================== -->
+  <section id="faq" class="relative py-32 bg-brand-dark-2 overflow-hidden">
+    <div class="max-w-4xl mx-auto px-6">
+      <!-- Section Header -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/20 mb-6">
+          <span class="text-brand-red text-xs font-medium tracking-widest uppercase">常见问题</span>
+        </div>
+        <h2 class="font-display font-bold text-4xl sm:text-5xl text-white mb-4">
+          您可能想知道的
+        </h2>
+      </div>
+
+      <!-- FAQ Items -->
+      <div class="space-y-4" x-data="{ open: null }">
+        <!-- FAQ 1 -->
+        <div class="glass rounded-xl border border-white/6 overflow-hidden" data-aos="fade-up" data-aos-delay="0">
+          <button 
+            @click="open = open === 1 ? null : 1"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-white/3 transition-colors"
+          >
+            <span class="text-white font-medium">如何访问司机社？</span>
+            <svg class="w-5 h-5 text-brand-red flex-shrink-0 transition-transform duration-300" :class="open === 1 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open === 1" x-collapse class="px-6 pb-5">
+            <p class="text-white/50 text-sm leading-relaxed">您可以直接点击本页面提供的地址一或地址二按钮进行访问司机社。如果一个地址无法访问，请尝试另一个备用地址。</p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="glass rounded-xl border border-white/6 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+          <button 
+            @click="open = open === 2 ? null : 2"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-white/3 transition-colors"
+          >
+            <span class="text-white font-medium">为什么需要收藏地址发布页？</span>
+            <svg class="w-5 h-5 text-brand-red flex-shrink-0 transition-transform duration-300" :class="open === 2 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open === 2" x-collapse class="px-6 pb-5">
+            <p class="text-white/50 text-sm leading-relaxed">由于网络环境变化，主站地址可能会不定期更新。收藏本发布页可以确保您随时获取最新有效的访问地址，避免因地址变更而无法访问的情况。</p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="glass rounded-xl border border-white/6 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+          <button 
+            @click="open = open === 3 ? null : 3"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-white/3 transition-colors"
+          >
+            <span class="text-white font-medium">访问是否安全？</span>
+            <svg class="w-5 h-5 text-brand-red flex-shrink-0 transition-transform duration-300" :class="open === 3 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open === 3" x-collapse class="px-6 pb-5">
+            <p class="text-white/50 text-sm leading-relaxed">我们采用加密技术保护用户数据，所有访问通道均经过安全验证。请确保您从官方发布页获取访问地址，避免钓鱼链接风险。</p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="glass rounded-xl border border-white/6 overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+          <button 
+            @click="open = open === 4 ? null : 4"
+            class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-white/3 transition-colors"
+          >
+            <span class="text-white font-medium">司机社运营了多久？</span>
+            <svg class="w-5 h-5 text-brand-red flex-shrink-0 transition-transform duration-300" :class="open === 4 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open === 4" x-collapse class="px-6 pb-5">
+            <p class="text-white/50 text-sm leading-relaxed">司机社自2018年创立，已稳定运营超过7年，拥有大量忠实用户群体，是值得信赖的资源分享平台。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FINAL CTA SECTION ==================== -->
+  <section class="relative py-32 bg-brand-dark overflow-hidden">
+    <!-- Background glow -->
+    <div class="absolute inset-0">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-brand-red/5 blur-3xl"></div>
+    </div>
+    <div class="divider-red absolute top-0 left-0 right-0"></div>
+
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10" data-aos="fade-up">
+      <h2 class="font-display font-bold text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight">
+        准备好访问了吗？
+      </h2>
+      <p class="text-white/50 text-lg mb-12 max-w-xl mx-auto">
+        收藏本页，随时获取最新访问地址。稳定、安全、持续更新。
       </p>
-      <ul>
-        <li>
-          <a href="https://docs.deno.com/examples">More examples in the Deno Docs</a>
-        </li>
-        <li>
-          <a href="https://deno.com/deploy">Deno Deploy Early Access</a>
-        </li>
-      </ul>
-    </section>
-    </main>
-    <hr>
-    <footer>
-      <section>
-      <ul class="flex-btwn">
-        <li>
-          <a href="https://deno.com">BlueSky</a>
-        </li>
-        <li>
-          <a href="https://deno.com">Twitter</a>
-        </li>
-        <li>
-          <a href="https://deno.com">YouTube</a>
-        </li>
-        <li>
-          <a href="https://deno.com">Newsletter</a>
-        </li>
-        <li>
-          <a href="https://deno.com">Deno</a>
-        </li>
-      </ul>
-      </section>
-    </footer>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="#access"
+          class="btn-glow-red inline-flex items-center justify-center gap-3 px-10 py-4 bg-brand-red rounded-xl text-white font-bold text-lg transition-all duration-300"
+        >
+          立即访问
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <button 
+          onclick="window.location.href='#home'"
+          class="inline-flex items-center justify-center gap-3 px-10 py-4 glass rounded-xl text-white font-bold text-lg border border-white/10 hover:bg-white/5 transition-all duration-300 hover:-translate-y-0.5"
+        >
+          收藏本页
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-brand-dark-2 border-t border-white/5 pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <!-- Footer Top -->
+      <div class="grid md:grid-cols-3 gap-12 mb-12">
+        <!-- Brand -->
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-9 h-9 rounded-lg bg-brand-red flex items-center justify-center shadow-lg shadow-red-900/50">
+              <span class="text-white font-display font-bold text-sm">司</span>
+            </div>
+            <span class="text-brand-red font-display font-bold text-xl">司机社</span>
+          </div>
+          <p class="text-white/40 text-sm leading-relaxed">
+            司机社——资源共享是互联网精神支柱。自2018年以来，为用户提供稳定可靠的访问体验。
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white font-semibold mb-6">快速导航</h4>
+          <div class="grid grid-cols-2 gap-3">
+            <a href="#home" class="text-white/40 hover:text-brand-red text-sm transition-colors">首页</a>
+            <a href="#access" class="text-white/40 hover:text-brand-red text-sm transition-colors">访问入口</a>
+            <a href="#about" class="text-white/40 hover:text-brand-red text-sm transition-colors">关于我们</a>
+            <a href="#faq" class="text-white/40 hover:text-brand-red text-sm transition-colors">常见问题</a>
+          </div>
+        </div>
+
+        <!-- Status -->
+        <div>
+          <h4 class="text-white font-semibold mb-6">服务状态</h4>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-white/40 text-sm">地址一</span>
+              <span class="flex items-center gap-1.5 text-green-400 text-xs">
+                <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                正常运行
+              </span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-white/40 text-sm">地址二</span>
+              <span class="flex items-center gap-1.5 text-green-400 text-xs">
+                <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                正常运行
+              </span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-white/40 text-sm">发布页</span>
+              <span class="flex items-center gap-1.5 text-green-400 text-xs">
+                <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                正常运行
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider-red mb-8"></div>
+
+      <!-- Footer Bottom -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-white/30 text-sm">
+          © 2018-2025 司机社导航 All rights reserved
+        </p>
+        <p class="text-white/20 text-xs">
+          本页面仅用于地址发布导航
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      once: true,
+      easing: 'ease-out-cubic',
+      offset: 80,
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"bfc9f7de881f43ba8f5060df3c419669","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
